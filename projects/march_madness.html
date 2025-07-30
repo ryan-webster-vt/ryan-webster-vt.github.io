@@ -8,48 +8,52 @@
   <link rel="icon" href="../favicon.ico" />
 </head>
 <body>
-    <header>
-        <h1>March Madness At-Large Projector</h1>
-        <nav>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
         <section class="project-header">
         <h2>March Madness At-Large Projector</h2>
         <p class="tagline">Predicting NCAA Tournament At-Large Bids with Machine Learning</p>
+        <a href="/index.html">Home</a>
         </section>
 
-        <section class="overview">
+        <section class="project-overview">
         <h3>Overview</h3>
+        <p> The NCAA College Basketball Tournament, better known as March Madness, is a 68-team, single elimination tournament held every spring to determine the national champion.
+        The selection process for the tournament is complex, with 31 teams receiving automatic bids by winning their respective conference tournaments, and 37 teams receiving at-large bids based on their performance during the regular season and conference tournaments.
+        This project aims to predict which teams will receive at-large bids using machine learning techniques, leveraging historical data and team metrics from the 2019 to 2025 seasons. Also, this project will provide insights into the factors 
+        that influence at-large selections, by looking at metrics like SOR (Strength of Record), NET (NCAA Evaluation Tool), number of Quad 1 wins and Quad 3 and 4 losses, and KenPom ratings.
+        </p>
         <p>
-        Using team metric data from the 2019 to 2025 NCAA College Basketall seasons, I constructed a machine learning model to predict which teams would recieve an at-large bid for the NCAA March Madness tournament. 
         The model achieved 96% accuracy in predicting which teams would receive at-large bids, especially in the 2025 season, where the model predicted 36 of the 37 at-large teams, outperforming 
         expert analyst such as ESPN's Joe Lunardi and CBS Sports' Jerry Palm.
         </p>
-        </section>
 
         <section class="tech-stack">
         <h3>Tech Stack</h3>
         <ul>
-        <li>R (tidyverse, rvest)</li>
+        <li>R (tidyverse, rvest, stringr)</li>
         <li>Microsoft Excel</li>
         <li>ggplot2 for data visualizations</li>
         <li>Git/GitHub</li>
         </ul>
         </section>
 
+        <section class = "data-sources">
+        <h3>Data Sources</h3>
+        <ul>
+            <li><a href="https://barttorvik.com/" target="_blank" rel="noopener noreferrer">Bart Torvik's T-Rank</a> - Team Metrics and Seeding</li>
+            <li><a href="https://www.sports-reference.com/cbb/" target="_blank" rel="noopener noreferrer">College Basketball Reference</a> - Conference Tournament Winners</li>
+        </section>
+
     <section class="notebooks">
          <h3>Project Highlights</h3>
          <ul>
-            <li>🧠 Trained models on 20+ years of tournament data</li>
-            <li>📈 Evaluated models using cross-validation and AUC</li>
-            <li>🏀 Created a full bracket prediction with win probabilities</li>
-            <li>📊 Visualized performance of teams and seeding impacts</li>
+            <li>🧠 Obtained data using web-scraping (rvest) from data sources.</li>
+            <li>📈 Cleaned and formatted data to obtain team metric and seed data for every team. Fixed descrepancies between the two data sources.</li>
+            <li>🏀 Created a logistic model and obtained model diagnostics</li>
+            <li>📊 Visualized EDA findings and model confusion tabel</li>
         </ul>
   </section>
+
 
   <section class = "repository">
     <h3>Repository</h3>
