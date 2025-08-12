@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,239 +8,270 @@
   <link rel="stylesheet" href="../styles/march_madness.css" />
   <link rel="icon" href="../icons/favicon_basketball.ico" />
 </head>
+
 <body>
-    <main>
-        <section class="project-header">
-        <h2>March Madness At-Large Projector</h2>
-        <a href="/index.html">Home</a>
-        </section>
+  <main>
+    <section class="project-header">
+      <h2>March Madness At-Large Projector</h2>
+      <a href="/index.html">Home</a>
+    </section>
 
-        <section class = "repository">
-        <h3>Repository</h3>
-        <p>Check out the full code and data on <a href="https://github.com/ryan-webster-vt/Substack/tree/main/March%20Madness%20At-Large%20Bids" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-        </section>
+    <section class="repository">
+      <h3>Repository</h3>
+      <p>Check out the full code and data on <a
+          href="https://github.com/ryan-webster-vt/Substack/tree/main/March%20Madness%20At-Large%20Bids" target="_blank"
+          rel="noopener noreferrer">GitHub</a>.</p>
+    </section>
 
-        <section class="project-overview">
-        <h3>Overview</h3>
-        <p> The NCAA College Basketball Tournament, better known as March Madness, is a 68-team, single elimination tournament held every spring to determine the national champion.
-        The selection process for the tournament is complex, with 31 teams receiving automatic bids by winning their respective conference tournaments, and 37 teams receiving at-large bids based on their performance during the regular season and conference tournaments.
-        This project aims to predict which teams will receive at-large bids using machine learning techniques, leveraging historical data and team metrics from the 2019 to 2025 seasons. Also, this project will provide insights into the factors 
-        that influence at-large selections, by looking at metrics like SOR (Strength of Record), NET (NCAA Evaluation Tool), number of Quad 1 wins and Quad 3 and 4 losses, and KenPom ratings.
-        </p>
-        <p>
-        The model achieved 96% accuracy in predicting which teams would receive at-large bids, especially in the 2025 season, where the model predicted 36 of the 37 at-large teams, outperforming 
+    <section class="project-overview">
+      <h3>Overview</h3>
+      <p> The NCAA College Basketball Tournament, better known as March Madness, is a 68-team, single elimination
+        tournament held every spring to determine the national champion.
+        The selection process for the tournament is complex, with 31 teams receiving automatic bids by winning their
+        respective conference tournaments, and 37 teams receiving at-large bids based on their performance during the
+        regular season and conference tournaments.
+        This project aims to predict which teams will receive at-large bids using machine learning techniques,
+        leveraging historical data and team metrics from the 2019 to 2025 seasons. Also, this project will provide
+        insights into the factors
+        that influence at-large selections, by looking at metrics like SOR (Strength of Record), NET (NCAA Evaluation
+        Tool), number of Quad 1 wins and Quad 3 and 4 losses, and KenPom ratings.
+      </p>
+      <p>
+        The model achieved 96% accuracy in predicting which teams would receive at-large bids, especially in the 2025
+        season, where the model predicted 36 of the 37 at-large teams, outperforming
         expert analyst such as ESPN's Joe Lunardi and CBS Sports' Jerry Palm.
-        </p>
+      </p>
 
-        <section class="tech-stack">
+      <section class="tech-stack">
         <h3>Tech Stack</h3>
         <ul>
-        <li>R (tidyverse, rvest, stringr)</li>
-        <li>Microsoft Excel</li>
-        <li>ggplot2 for data visualizations</li>
-        <li>Git/GitHub</li>
+          <li>R (tidyverse, rvest, stringr)</li>
+          <li>Microsoft Excel</li>
+          <li>ggplot2 for data visualizations</li>
+          <li>Git/GitHub</li>
         </ul>
-        </section>
+      </section>
 
-        <section class = "data-sources">
+      <section class="data-sources">
         <h3>Data Sources</h3>
         <ul>
-            <li><a href="https://barttorvik.com/" target="_blank" rel="noopener noreferrer">Bart Torvik's T-Rank</a> - Team Metrics and Seeding</li>
-            <li><a href="https://www.sports-reference.com/cbb/" target="_blank" rel="noopener noreferrer">College Basketball Reference</a> - Conference Tournament Winners</li>
-        </section>
+          <li><a href="https://barttorvik.com/" target="_blank" rel="noopener noreferrer">Bart Torvik's T-Rank</a> -
+            Team Metrics and Seeding</li>
+          <li><a href="https://www.sports-reference.com/cbb/" target="_blank" rel="noopener noreferrer">College
+              Basketball Reference</a> - Conference Tournament Winners</li>
+      </section>
 
-    <section class="notebooks">
-         <h3>Project Highlights</h3>
-         <ul>
-            <li>🧠 Obtained data using web-scraping (rvest) from data sources.</li>
-            <li>📈 Cleaned and formatted data to obtain team metric and seed data for every team. Fixed descrepancies between the two data sources.</li>
-            <li>🏀 Created a logistic model and obtained model diagnostics</li>
-            <li>📊 Visualized EDA findings and model confusion tabel</li>
+      <section class="notebooks">
+        <h3>Project Highlights</h3>
+        <ul>
+          <li>🧠 Obtained data using web-scraping (rvest) from data sources.</li>
+          <li>📈 Cleaned and formatted data to obtain team metric and seed data for every team. Fixed descrepancies
+            between the two data sources.</li>
+          <li>🏀 Created a logistic model and obtained model diagnostics</li>
+          <li>📊 Visualized EDA findings and model confusion tabel</li>
         </ul>
-  </section>
+      </section>
 
-   <section>
-    <h3>Exploratory Data Analysis</h3>
-    <p>Before building the model, I performed exploratory data analysis (EDA) to understand the data and identify the mean and median values for the five metrics I am focusing on for teams that <strong>received</strong> an at-large bid.</p>
-    <table border="1">
-  <thead>
-    <tr>
-      <th>Metric</th>
-      <th>Mean</th>
-      <th>Median</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>NET</td>
-      <td>29.45</td>
-      <td>27</td>
-    </tr>
-    <tr>
-      <td>KenPom</td>
-      <td>28.99</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td>SOR</td>
-      <td>27.58</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <td>Q1 Wins</td>
-      <td>5.73</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Q3 + Q4 Losses</td>
-      <td>0.8</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-<p>From our initial findings, teams that receive an at-large bid have an average NET, KenPom, and SOR of about 28. This isn't a cutoff, just an average of all of those teams.
-  Additionally, teams typically have at least 5 Q1 wins and no more than 1 Q3 or Q4 loss, which demonstrates the importance of quality wins and avoiding even two bad losses in the selection process.</p>
-</p>
+      <section>
+        <h3>Exploratory Data Analysis</h3>
+        <p>Before building the model, I performed exploratory data analysis (EDA) to understand the data and identify
+          the mean and median values for the five metrics I am focusing on for teams that <strong>received</strong> an
+          at-large bid.</p>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Mean</th>
+              <th>Median</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NET</td>
+              <td>29.45</td>
+              <td>27</td>
+            </tr>
+            <tr>
+              <td>KenPom</td>
+              <td>28.99</td>
+              <td>26</td>
+            </tr>
+            <tr>
+              <td>SOR</td>
+              <td>27.58</td>
+              <td>26</td>
+            </tr>
+            <tr>
+              <td>Q1 Wins</td>
+              <td>5.73</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Q3 + Q4 Losses</td>
+              <td>0.8</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>From our initial findings, teams that receive an at-large bid have an average NET, KenPom, and SOR of about
+          28. This isn't a cutoff, just an average of all of those teams.
+          Additionally, teams typically have at least 5 Q1 wins and no more than 1 Q3 or Q4 loss, which demonstrates the
+          importance of quality wins and avoiding even two bad losses in the selection process.</p>
+        </p>
 
-  </section>
+      </section>
 
-  <section class="histogram-section">
-    <p>Shown below are the distributions of at-large team's NET, Q1 Wins, and Q3+Q4 Losses (I omitted SOR and KenPom because they're essentially equivalent to NET)</p>
-  <img src="../images/March Madness/hist_net.jpeg" alt="Histogram of NET Rankings" width="800">
-  <p>As expected with count data, the distribution is right skewed, with the mean sitting at about 29. The team with the highest (worse) NET to receive an at-large bid was the 2022 Rutgers at 77.</p>
-  <img src="../images/March Madness/hist_q1_wins.jpeg" alt="Histogram of Q1 Wins" width="800">
-  <img src="../images/March Madness/q3q4_losses.jpeg" alt="Histogram of Q3+Q4 Losses" width="800">
-  <p>Next, we'll look at a boxplot of these same metrics to observe each of the quantile ranges so that we can observe where teams have to be around so that they feel safe going into Selection Sunday.</p>
-</section>
+      <section class="histogram-section">
+        <p>Shown below are the distributions of at-large team's NET, Q1 Wins, and Q3+Q4 Losses (I omitted SOR and KenPom
+          because they're essentially equivalent to NET)</p>
+        <img src="../images/March Madness/hist_net.jpeg" alt="Histogram of NET Rankings" width="800">
+        <p>As expected with count data, the distribution is right skewed, with the mean sitting at about 29. The team
+          with the highest (worse) NET to receive an at-large bid was the 2022 Rutgers at 77.</p>
+        <img src="../images/March Madness/hist_q1_wins.jpeg" alt="Histogram of Q1 Wins" width="800">
+        <img src="../images/March Madness/q3q4_losses.jpeg" alt="Histogram of Q3+Q4 Losses" width="800">
+        <p>Next, we'll look at a boxplot of these same metrics to observe each of the quantile ranges so that we can
+          observe where teams have to be around so that they feel safe going into Selection Sunday.</p>
+      </section>
 
-<section class = "boxplot-section">
-  <img src="../images/March Madness/boxplot_net.jpeg" alt="Boxplot of NET Rankings" width="800">
-  <img src="../images/March Madness/boxplot_q1_wins.jpeg" alt="Boxplot of Q1 Wins" width="800">
-  <img src="../images/March Madness/boxplot_q3q4_losses.jpeg" alt="Boxplot of Q3+Q4 Losses" width="800">
-  <p>25 Percentile: 15, 75 Percentile: 38</p>
-</section>
+      <section class="boxplot-section">
+        <img src="../images/March Madness/boxplot_net.jpeg" alt="Boxplot of NET Rankings" width="800">
+        <img src="../images/March Madness/boxplot_q1_wins.jpeg" alt="Boxplot of Q1 Wins" width="800">
+        <img src="../images/March Madness/boxplot_q3q4_losses.jpeg" alt="Boxplot of Q3+Q4 Losses" width="800">
+        <p>25 Percentile: 15, 75 Percentile: 38</p>
+      </section>
 
-<section class = "model">
-  <h3>Full Logistic Regression Model</h3>
-  <p>First, I built the Logistic Regression model using all five variables. As always, I split the data into training and testing data </p>
-  <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
-  <thead>
-    <tr style="background-color: #f2f2f2;">
-      <th style="padding: 8px; border: 1px solid #ddd;">Variable</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">Estimate</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">Std. Error</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">z value</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">Pr(&gt;|z|)</th>
-      <th style="padding: 8px; border: 1px solid #ddd;">Significance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd;">(Intercept)</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">-35.9852</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">5.4925</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">-6.552</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">5.69e-11</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">***</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd;">NET</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">-3.6680</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">1.8226</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">-2.012</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">0.04417</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">*</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd;">SOR</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">-13.9120</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">3.0379</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">-4.580</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">4.66e-06</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">***</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd;">KenPom</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">-9.2484</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">2.3500</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">-3.936</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">8.30e-05</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">***</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd;">Q1 Wins</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">0.9786</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">0.3335</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">2.934</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">0.00335</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">**</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd;">Q3+Q4 Losses</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">1.6635</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">1.4631</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">1.137</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">0.25556</td>
-      <td style="padding: 8px; border: 1px solid #ddd;"></td>
-    </tr>
-  </tbody>
-</table>
+      <section class="model">
+        <h3>Full Logistic Regression Model</h3>
+        <p>First, I built the Logistic Regression model using all five variables. As always, I split the data into
+          training and testing data </p>
+        <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+          <thead>
+            <tr style="background-color: #f2f2f2;">
+              <th style="padding: 8px; border: 1px solid #ddd;">Variable</th>
+              <th style="padding: 8px; border: 1px solid #ddd;">Estimate</th>
+              <th style="padding: 8px; border: 1px solid #ddd;">Std. Error</th>
+              <th style="padding: 8px; border: 1px solid #ddd;">z value</th>
+              <th style="padding: 8px; border: 1px solid #ddd;">Pr(&gt;|z|)</th>
+              <th style="padding: 8px; border: 1px solid #ddd;">Significance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">(Intercept)</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">-35.9852</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">5.4925</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">-6.552</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">5.69e-11</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">***</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">NET</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">-3.6680</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">1.8226</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">-2.012</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">0.04417</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">*</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">SOR</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">-13.9120</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">3.0379</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">-4.580</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">4.66e-06</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">***</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">KenPom</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">-9.2484</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">2.3500</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">-3.936</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">8.30e-05</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">***</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">Q1 Wins</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">0.9786</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">0.3335</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">2.934</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">0.00335</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">**</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">Q3+Q4 Losses</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">1.6635</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">1.4631</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">1.137</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">0.25556</td>
+              <td style="padding: 8px; border: 1px solid #ddd;"></td>
+            </tr>
+          </tbody>
+        </table>
 
-<p>Looking at the model output, all but variable Q3+Q4 losses were deemed significant with a p-value < 0.05 
-with reasonable coefficients for each of the variables (having a higher NET would decrease your log odds, etc.)
-However, having a positive coefficient for Q3+Q4 Losses which is counterintuitive. My first hunch would be due to 
-multicollinearity, however, checking the VIF values for the model, each variable sits near 1, indicating no 
-multicollinearity issues. Or, teams that had a high number of Q3+Q4 losses made that up by having great metrics,
-so the model thinks that there is no issue in having a high number of bad losses. Later on, I will use LASSO regression
-to shrink unneccessary variables to zero.</p>
+        <p>Looking at the model output, all but variable Q3+Q4 losses were deemed significant with a p-value < 0.05 with
+            reasonable coefficients for each of the variables (having a higher NET would decrease your log odds, etc.)
+            However, having a positive coefficient for Q3+Q4 Losses which is counterintuitive. My first hunch would be
+            due to multicollinearity, however, checking the VIF values for the model, each variable sits near 1,
+            indicating no multicollinearity issues. Or, teams that had a high number of Q3+Q4 losses made that up by
+            having great metrics, so the model thinks that there is no issue in having a high number of bad losses.
+            Later on, I will use LASSO regression to shrink unneccessary variables to zero.</p>
 
-<p>Still, this full model had an impressive pseudo-R squared value of 0.9 and an AIC of 101. </p>
+            <p>Still, this full model had an impressive pseudo-R squared value of 0.9 and an AIC of 101. </p>
 
-<p>When making predictions onto the testing dataset, I decided to make it where teams with the top 37 probabilities would be given the bid. Also, because not all years are equivalent in the strength of the bubble, I decided
-  to make these predictions based on an adjusted min-max probabilities where the total sum of probabilities for each year would equal 37. This way, the model can be used to predict the bubble for any year.</p>
-</p>
+            <p>When making predictions onto the testing dataset, I decided to make it where teams with the top 37
+              probabilities would be given the bid. Also, because not all years are equivalent in the strength of the
+              bubble, I decided
+              to make these predictions based on an adjusted min-max probabilities where the total sum of probabilities
+              for each year would equal 37. This way, the model can be used to predict the bubble for any year.</p>
+        </p>
 
-<h3>Confusion Matrix</h3>
-<table border="1" cellpadding="6" cellspacing="0">
-  <thead>
-    <tr>
-      <th>Reference \\ Prediction</th>
-      <th>FALSE</th>
-      <th>TRUE</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>FALSE</strong></td>
-      <td>294</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><strong>TRUE</strong></td>
-      <td>2</td>
-      <td>35</td>
-    </tr>
-  </tbody>
-</table>
+        <h3>Confusion Matrix</h3>
+        <table border="1" cellpadding="6" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Reference \\ Prediction</th>
+              <th>FALSE</th>
+              <th>TRUE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>FALSE</strong></td>
+              <td>294</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td><strong>TRUE</strong></td>
+              <td>2</td>
+              <td>35</td>
+            </tr>
+          </tbody>
+        </table>
 
-<p>This Confusion Table shows that the model was able to successfully identify the correct status of at-large teams 329/333 times for an accuracy rating of 98.8%. However, this percentage is inflated by the model correctly identifying teams
-  that had no buisness making the tournament. The real test of the model is looking at how it predicted teams that made the tournament and actually made the tournament. So, this model was able to correctly identify 35 of the 37 at-large teams for an accuracy of 94.6%.</p>
-</p>
+        <p>This Confusion Table shows that the model was able to successfully identify the correct status of at-large
+          teams 329/333 times for an accuracy rating of 98.8%. However, this percentage is inflated by the model
+          correctly identifying teams
+          that had no buisness making the tournament. The real test of the model is looking at how it predicted teams
+          that made the tournament and actually made the tournament. So, this model was able to correctly identify 35 of
+          the 37 at-large teams for an accuracy of 94.6%.</p>
+        </p>
 
 
-</section>
+      </section>
 
 
 
 
-  <section class = "repository">
-    <h3>Repository</h3>
-    <p>Check out the full code and data on <a href="https://github.com/ryan-webster-vt/Substack/tree/main/March%20Madness%20At-Large%20Bids" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
-  </section>
-  
-    </main>
+      <section class="repository">
+        <h3>Repository</h3>
+        <p>Check out the full code and data on <a
+            href="https://github.com/ryan-webster-vt/Substack/tree/main/March%20Madness%20At-Large%20Bids"
+            target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+      </section>
 
-    <script src="../styles/darkmode.js"></script>
+  </main>
+
+  <script src="../styles/darkmode.js"></script>
 
 </body>
+
 </html>
