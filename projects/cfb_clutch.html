@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2024-2025 CFB Clutchness Factor</title>
+    <link rel="stylesheet" href="../styles/march_madness.css" />
+    <link rel="icon" href="../icons/favicon_football.ico" />
+</head>
+
+<body>
+    <main>
+        <section class="project-description">
+            <h2>2024-2025 College Football Clutch Performance Index</h2>
+            <p></p>
+            <a href="/index.html">Home</a>
+        </section>
+
+        <section class="repository">
+            <h3>Repository</h3>
+            <p>Check out the full code and data on <a
+                    href="https://github.com/ryan-webster-vt/Substack/tree/main/CFB%20Clutchness%20Factor"
+                    target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+        </section>
+
+        <section class="Overview">
+            <h3>Overview</h3>
+            <p>Gauging how "clutch" (their ability to win in close game situations) can be tricky. For instance, saying
+                a team is clutch because they win a lot of close one possesion games can be misleading. This is because
+                final scores can lack context of
+                the entire game. For example, a team may be up three possesions with two minutes left and the opposing
+                team scores two touchdowns in garbage time. Does this make the winning team clutch? No. It goes both
+                ways too. In an attempt to measure a team's "clutchness",
+                I created a custom metric that takes into account the win probability of a team with two minutes left in
+                the game and then calculated the expected win total for the 2024-2025 regular season and compared it to
+                their actual win total. If it's positive,
+                that means that team won more than expected in close game situations, and if it's negative, they lost
+                more than expected.</p>
+            </p>
+        </section>
+
+        <section class="Tech Stack">
+            <h3>Tech Stack</h3>
+            <ul>
+                <li>R (tidyverse, cfbfastR)</li>
+                <li>Tableau Public</li>
+                <li>Git/GitHub</li>
+            </ul>
+        </section>
+
+        <section class="Data Source">
+            <h3>Data Source</h3>
+            <p>All data used in this project was sourced from <a href="https://cfbfastr.sportsdataverse.org/"
+                    target="_blank" rel="noopener noreferrer">cfbfastR</a>, a package in R that provides play-by-play
+                data for college football games, amongst other features.</p>
+        </section>
+
+        <section class="Project Highlights">
+            <h3>Project Highlights</h3>
+            <ul>
+                <li>Obtained access to the cfbfastR play-by-play data for the 2024-2025 College Football season. Cleaned
+                    and formatted data to my liking.</li>
+                <li>Calculated expected win totals for every team based on their win probability nearest to the two
+                    minute warning for each game.</li>
+                <li>Exported results to Tableau, created bar charts comparing the top 25 most and least clutch teams,
+                    along with a list</li>
+                <li>Published my findings to Tableau Public and Substack</li>
+            </ul>
+        </section>
+
+        <section class="explanation">
+            <h3>Clutchness Factor Metric</h3>
+            <p>In this project, I define a team's Clutchness Factor (CF) for a specific game as the result of the game
+                (1 for win, 0 for loss) minus their win probability with two minutes left to go. So, a team with a 99%
+                win probabilty with two minutes left that won would
+                only recieve a CF of 0.01, while a team with a 20% win probability that won would receive a CF of 0.8
+                and the opposing team who lost would recieve a CF of -0.8. This metric is then summed across all games
+                for each team to get their overall Clutchness Factor for the season. Note that the CF for a given team
+                for the entire
+                season is simply their actual win total minus expected win total with two minutes remaining.</p>
+            </p>
+        </section>
+
+        <section class="findings">
+            <h3>Findings</h3>
+            <p>After computing the expected win totals, I found that Iowa St. was the most clutch team with a win
+                expectancy of 8.353 compared to a win total of 10.</p>
+            <ul>
+                <li>
+                    The Cyclones received <strong>0.87 points</strong> in their 20–19 win over Iowa, coming back from a
+                    19–7 deficit and winning on a last-second 54-yard field goal.
+                </li>
+                <li>
+                    Iowa State received <strong>0.97 points</strong> in their 38–35 win over UCF. They came back from
+                    only a <strong>3%</strong> chance to win after UCF was driving in ISU territory up 5 with 2 minutes
+                    left, forcing a punt. ISU then drove 11 plays, 80 yards, in 1:18 to take the lead and win.
+                </li>
+                <li>
+                    Iowa State lost <strong>0.839 points</strong> in their 23–22 loss to Texas Tech after blowing an
+                    <strong>83.9%</strong> win probability. The Red Raiders drove 71 yards in 1:47 to score and win.
+                </li>
+                <li>
+                    Iowa State received <strong>0.63 points</strong> in their 31–28 win over Utah. They scored a
+                    touchdown to take the lead, and Utah missed a 54-yard field goal that would have tied the game.
+                </li>
+            </ul>
+
+        </section>
+
+    </main>
+
+
+
+</body>

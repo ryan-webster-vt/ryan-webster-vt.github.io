@@ -17,6 +17,60 @@ main {
   border-radius: 25px;
 }
 
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Optional: add more elements to adjust in dark mode */
+a {
+  color: blue;
+}
+body.dark-mode a {
+  color: #90caf9;
+}
+
+body.dark-mode li {
+  background: #1e1e1e; /* dark grey background */
+  color: #f0f0f0;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05); /* subtle glow */
+}
+
+/* Enhance dark mode styling */
+body.dark-mode main {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+/* Adjust heading colors for dark mode */
+body.dark-mode h2 {
+  color: #90caf9; /* or a slightly lighter blue */
+}
+body.dark-mode h3 {
+  color: #64b5f6;
+}
+
+/* Adjust table in dark mode */
+body.dark-mode table {
+  border-color: #444;
+}
+
+body.dark-mode thead {
+  background-color: #1c1c1c;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #444;
+}
+
+/* Optional: soften list bullets and spacing */
+body.dark-mode ul {
+  color: #f0f0f0;
+}
+
+
 /* Section spacing */
 section {
   margin-bottom: 40px;

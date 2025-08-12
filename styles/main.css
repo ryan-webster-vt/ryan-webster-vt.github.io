@@ -30,6 +30,50 @@
   /* font-size: 1.1em; */
 }
 
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Optional: add more elements to adjust in dark mode */
+a {
+  color: blue;
+}
+body.dark-mode a {
+  color: #90caf9;
+}
+
+#darkModeToggle {
+  background-color: #eee;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#darkModeToggle:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+
+body.dark-mode li {
+  background: #1e1e1e; /* dark grey background */
+  color: #f0f0f0;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05); /* subtle glow */
+}
+
+
+/* Optional: dark mode styles for the button */
+body.dark-mode #darkModeToggle {
+  background-color: #333;
+  color: #fff;
+}
+
+
+
 
   body {
   font-family: 'Segoe UI', sans-serif;
